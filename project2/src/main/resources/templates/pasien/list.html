@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>List Laptop</title>
+
+</head>
+<body>
+	<h1>Tabel Pasien</h1>
+
+	<form action="/satrioweb/pasien/detail" method="post">
+		Nama : <input type="text" name="kataKunciNama" />
+		<button type="submit">Detail</button>
+	</form>
+
+	<form action="/satrioweb/pasien/search" method="post">
+		Nama : <input type="text" name="searchNama" />
+		<button type="submit">Search</button>
+	</form>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Nama</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="pasienModel:${pasienAja}">
+				<td><a th:text="${pasienModel.noPasien}"></a></td>
+				<td><a th:text="${pasienModel.namaPasien}"></a></td>
+				<td><a th:text="${pasienModel.namaPasien}"></a></td>
+				<td><a
+					th:href="@{/pasien/update?(pasienID=${pasienModel.noPasien})}">Edit</a></td>
+				<td><a
+					th:href="@{/pasien/delete?(pasienID=${pasienModel.noPasien})}">Hapus</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<button type="button" class="btn btn-primary btn-fw" id="btn-tambah">Tambah
+		Data</button>
+
+	<div id="modal-pasien" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Pop-up Add Pasien</h4>
+				</div>
+				<div class="modal-body">
+					<p>Some text in the modal.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+
+
+</script>
+
+</body>
+</html>

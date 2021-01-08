@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>List Laptop</title>
+</head>
+<body>
+
+	<h1>Tabel Laptop</h1>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Merk</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="pasienModel:${pasienAja}">
+				<td><a th:text="${pasienModel.noPasien}"></a></td>
+				<td><a th:text="${pasienModel.namaPasien}"></a></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/pasien/edit}" method="post">
+		<h2>Form Update Pasien</h2>
+		<table>
+			<tr>
+				<td>No Pasien <input type="text" name="noPasien" th:field="*{pasienModel.noPasien}" readonly/></td>
+			</tr>		
+			<tr>
+				<td>Nama Pasien <input type="text" name="namaPasien" th:field="*{pasienModel.namaPasien}"/></td>
+			</tr>		
+			<tr>
+				<td>Biaya Pasien <input type="text" name="biayaPasien" th:field="*{pasienModel.biayaPasien}"/></td>
+			</tr>		
+		</table>
+		<input type="submit" value="Update" />
+	</form>
+</body>
+</html>

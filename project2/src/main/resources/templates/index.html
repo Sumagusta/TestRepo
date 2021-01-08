@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>KH - Techno</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet"
+	href="vendors/iconfonts/ionicons/css/ionicons.css">
+<link rel="stylesheet"
+	href="vendors/iconfonts/typicons/src/font/typicons.css">
+<link rel="stylesheet"
+	href="vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+<link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="vendors/css/vendor.bundle.addons.css">
+<link rel="stylesheet" href="css/shared/style.css">
+<link rel="stylesheet" href="css/demo_1/style.css">
+<link rel="shortcut icon" href="images/favicon.png" />
+
+<style type="text/css">
+h6 {
+	color: red;
+	font-style: italic;
+}
+
+input {
+	background-color: silver;
+}
+</style>
+
+</head>
+<body>
+	<div class="container">
+		<h1>Materi CSS</h1>
+		<input type="text" id="username" placeholder="isi data username" />
+		<h6 id="redAlert" style="display: none;">Masukkan Username dulu</h6>
+		<input type="text" id="password" placeholder="isi data password" />
+		<h6 id="redAlert" style="display: none;">Masukkan Password dulu</h6>
+
+		<div class="alert alert-success" role="alert">
+			<strong>Well done!</strong> You successfully read this important
+			alert message.
+		</div>
+
+		<button type="button" class="btn btn-warning" onclick="tes();">SUBMIT</button>
+		<div>
+			<h1 id="muncul" style="display: none;">aa</h1>
+		</div>
+	</div>
+	
+	<button type="button" class="btn btn-primary btn-fw" id="btn-tambah">Tambah
+		Data</button>
+
+	<table class="table table-bordered">
+		
+		<tbody id="list-pasien">
+			
+			<!-- result list -->
+		
+		</tbody>
+	</table>
+	
+	<div id="modal-pasien" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Pop-up Add Pasien</h4>
+				</div>
+				<div class="modal-body">
+					<p>Some text in the modal.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="vendors/js/vendor.bundle.base.js"></script>
+	<script src="vendors/js/vendor.bundle.addons.js"></script>
+	<script src="js/shared/off-canvas.js"></script>
+	<script src="js/shared/misc.js"></script>
+	
+</body>
+
+<script type="text/javascript">
+	function tes() {
+		//document.getElementById('muncul').innerHTML = "Tadinya Username"
+
+		var h1 = document.getElementById("muncul");
+
+		if (h1.style.display == "none") {
+			h1.style.display = "block";
+		} else if (h1.style.display == "block") {
+			h1.style.display = "none"
+		}
+
+		var user = document.getElementById("username").value;
+		var userAlert = document.getElementById("redAlert");
+
+		if (user == "") {
+			alert("Isi data username")
+		}
+
+	}
+	
+	//refreshData();
+
+	//Ajax list
+	function refreshData(){
+		$.ajax({
+			url : '/satrioweb/pasien/list',
+			type : 'get',
+			dataType : 'html',
+			success : function(result){
+				$('#list-pasien').html(result);
+			}
+		});
+	}
+	
+	//Ajax Pop-up tambah data
+	$('#btn-tambah').click(function(){
+		var noPasien = $(this).val();
+		$.ajax({
+			url :'/satrioweb/pasienAdd',
+			type : 'get',
+			dataType : 'html',
+			data : {noPasien, noPasien},
+		success : function(result){
+			$('#modal-pasien').modal('show');
+			$('#modal-pasien').find('.modal-body').html(result);
+		}
+		});
+	});
+	
+	//Ajax Create
+	$('#modal-pasien').on('submit', '#form-pasien-tambah', function(){
+		$.ajax({
+			url : '/satrioweb/pasien/create',
+			type : 'post',
+			data : $(this).serialize(),
+			success : function(result){
+				alert('data berhasil diinsert')
+				$('#modal-pasien').modal('hide');
+				refreshData();
+			}
+		})
+		return false;
+	});
+	
+</script>
+
+</html>

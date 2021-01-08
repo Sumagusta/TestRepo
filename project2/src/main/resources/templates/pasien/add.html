@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert Pasien</title>
+</head>
+<body>
+
+<div class="card">
+		<div class="card-body">
+			<h3 class="card-title">Tambah Data Pasien</h3>
+			<p class="card-description">Masukkan detail data</p>
+			<form class="forms-sample" id="form-pasien-tambah">
+				<div class="form-group">
+					<label> No Pasien</label> <input type="text"
+						class="form-control" placeholder="Masukkan No Pasien"
+						name="noPasien">
+				</div>
+				<div class="form-group">
+					<label> Nama Pasien</label> <input type="text"
+						class="form-control" placeholder="Masukkan Nama Pasien"
+						name="namaPasien">
+				</div>
+				<div class="form-group">
+					<label> Biaya Pasien</label> <input type="text"
+						class="form-control" placeholder="Masukkan Biaya Pasien"
+						name="biayaPasien">
+				</div>
+				<button type="submit" class="btn btn-success mr-2">Submit</button>
+				<button class="btn btn-light" data-dismiss="modal">Cencel</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- <form th:action="@{/pasien/create}" method="post">
+	
+		<h2>Form Pasien</h2>
+		No Pasien <input type="text" name="noPasien"  />
+		Nama Pasien <input type="text" name="namaPasien"  />
+		Biaya Pasien <input type="text" name="biayaPasien"  />
+		<input type="submit" value="Simpan" />
+	</form>
+	<div>
+	<a th:href="@{/pasien/list}">Back to List</a>
+	</div> -->
+	
+</body>
+</html>

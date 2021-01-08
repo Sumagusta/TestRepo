@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<body>
+<title>Validasi</title>
+</head>
+<body>
+	<h3 style="color: gray;">Buat Account Baru</h3>
+	<hr style="color: gray;">
+	<p>For international applicants, please contact our <a href="#">International Office</a> 
+		regarding application procedure. This registration form is meant for Indonesian citizen only.</p>
+	<p>Harap menggunakan account lama Anda jika Anda telah membuat pendaftaran sebelumnya.</p>
+	
+	<!-- table login -->
+	<h4 style="color: gray;">Login</h4>
+	<hr style="color: gray;">
+	<table>
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdUsername">Field ini Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Username</td>
+			<td><input type="text" id="username"></td>
+		</tr>		
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;">Username yang Anda inginkan (hanya dapat terdiri dari huruf, angka, dan _). 
+			Username tidak boleh mengandung spasi.</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdPassword">Field ini Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td><input type="password" id="password"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;">Masukkan password. Password minimal terdiri dari 6 karakter dan case sensitive (A beda dengan a).</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdUlangiPassword">Field ini Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Ulangi Password</td>
+			<td><input type="password" id="ulangiPassword"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;"></td>
+		</tr>
+	</table>
+	
+	<!-- table identitas -->
+	<h4 style="color: gray;">Identitas</h4>
+	<hr style="color: gray;">
+	<table>
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdNamaSesuaiIdentitas">Nama sesuai identitas Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Nama sesuai identitas</td>
+			<td><input type="text" id="namaSesuaiIdentitas"></td>
+		</tr>		
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;">Nama sesuai yang tertulis di kartu identitas, tanpa gelar akademis/sertifikasi. <br>
+				Nama diawali huruf besar di awal dan setelah spasi, contoh benar: Abc Def, contoh salah: abc def, ABC DEF.</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdNamaSesuaiIjazah">Nama sesuai ijazah Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Nama sesuai ijazah</td>
+			<td><input type="text" id="namaSesuaiIjazah"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;">Nama sesuai yang tertulis di ijazah, tanpa gelar akademis/sertifikasi. <br>
+			Nama diawali huruf besar di awal dan setelah spasi, contoh benar: Abc Def, contoh salah: abc def, ABC DEF.</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px;display: none;"id="tdJenisIdentitas">Anda belum memilih Identitas</td>
+		</tr>
+		<tr>
+			<td>Jenis identitas</td>
+			<td>
+				<select id="jenisIdentitas">
+					<option value="-">--PILIH--</option>
+					<option value="ktp">KTP</option>
+					<option value="sim">SIM</option>
+					<option value="paspor">Paspor</option>
+					<option value="ktm">Kartu Belajar Berfoto</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;">Pilih jenis identitas Anda. Identitas harus dibawa ketika ujian/daftar ulang.</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdNomorIdentitas">Field ini Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Nomor Identitas</td>
+			<td><input type="text" id="nomorIdentitas"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;"></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdKewarganegaraan">Field ini Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Kewarganegaraan</td>
+			<td>
+				<select id="kewarganegaraan">
+					<option value="pilihKewarganegaraan">--PILIH--</option>
+					<option value="indonesia">Indonesia</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;"></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px;"></td>
+		</tr>
+		<tr>
+			<td>Jenis Kelamin</td>
+			<td><input type="radio" name="jk" id="jkPria">Pria<br>
+				<input type="radio" name="jk" id="jkWanita">Wanita
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;"></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px;"></td>
+		</tr>
+		<tr>
+			<td>Tanggal Lahir</td>
+			<td>
+				<select id="tanggal">
+					<option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					<option>05</option>
+					<option>06</option>
+					<option>07</option>
+					<option>08</option>
+					<option>09</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+					<option>24</option>
+					<option>25</option>
+					<option>26</option>
+					<option>27</option>
+					<option>28</option>
+					<option>29</option>
+					<option>30</option>
+					<option>31</option>
+				</select>
+				<select>
+					<option>Januari</option>
+					<option>Februari</option>
+					<option>Maret</option>
+					<option>April</option>
+					<option>Mei</option>
+					<option>Juni</option>
+					<option>Juli</option>
+					<option>Agustus</option>
+					<option>September</option>
+					<option>Oktober</option>
+					<option>November</option>
+					<option>Desember</option>
+				</select>
+				<select>
+					<option>1990</option>
+					<option>1991</option>
+					<option>1992</option>
+					<option>1993</option>
+					<option>1994</option>
+					<option>1995</option>
+					<option>1996</option>
+					<option>1997</option>
+					<option>1998</option>
+					<option>1999</option>
+					<option>2000</option>
+					<option>2001</option>
+					<option>2002</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;"></td>
+		</tr>
+	</table>
+	
+	<!--Kontak-->
+	<h4 style="color: gray;">Kontak</h4>
+	<hr style="color: gray;">
+	<table>
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdAlamatTetap">Field ini Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Alamat Tetap</td>
+			<td><input type="text" id="alamatTetap"></td>
+		</tr>		
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;"></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px;display: none;" id="tdNegara">Anda Belum Memilih Negara</td>
+		</tr>
+		<tr>
+			<td>Negara</td>
+			<td>
+				<select id="negara">
+					<option value="pilihNegara">--PILIH--</option>
+					<option value="indonesia">Indonesia</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;"></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdProvinsi">Pilih Salah Satu Provinsi</td>
+		</tr>
+		<tr>
+			<td>Provinsi</td>
+			<td>
+				<select id="provinsi" onclick="addKota();">
+					<option value="pilihProvinsi">--PILIH--</option>
+					<option value="banten">Banten</option>
+					<option value="jakarta">DKI Jakarta</option>
+					<option value="jabar">Jawa Barat</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;"></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdKota">Field ini Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Kabupaten/Kotamadya</td>
+			<td>
+				<select id="kota">
+					<option value="pilihKabupaten">--PILIH--</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;"></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdAlamat">Field ini Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Alamat saat ini</td>
+			<td><input type="text" id="alamat"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;"></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdNoTelepon">Field ini Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>No. telepon</td>
+			<td><input type="text" id="noTelepon"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;">Nomor telepon yang dapat dihubungi. Pisahkan dengan , (koma) jika ada beberapa nomor.</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px;display: none;" id = "tdNoHp">Nomor HP masih Kosong</td>
+		</tr>
+		<tr>
+			<td>No. HP</td>
+			<td><input type="text" id="noHp"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;">Nomor handphone. Pisahkan dengan , (koma) jika ada beberapa nomor.</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdEmail">Field ini Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><input type="email" id="email"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;">Pastikan alamat email Anda benar, email konfirmasi akan dikirim ke alamat email tersebut.</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td style="color: red; font-size: 12px; display: none;" id="tdUlangiEmail">Field ini Harus Diisi</td>
+		</tr>
+		<tr>
+			<td>Ulangi Email</td>
+			<td><input type="email" id="ulangiEmail"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="color: gray; font-size: 10px;">Pastikan alamat email Anda benar, email konfirmasi akan dikirim ke alamat email tersebut.</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button type="button" onclick="validate();">Simpan</button></td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript">
+		function validate() {
+			
+		var username = document.getElementById("username");
+		var tdUsername = document.getElementById("tdUsername");
+		
+		var password = document.getElementById("password");
+		var tdPassword = document.getElementById("tdPassword");
+		
+		var ulangiPassword = document.getElementById("ulangiPassword");
+		var tdUlangiPassword = document.getElementById("tdUlangiPassword");
+		
+		var namaSesuaiIdentitas = document.getElementById("namaSesuaiIdentitas");
+		var tdNamaSesuaiIdentitas = document.getElementById("tdNamaSesuaiIdentitas");
+		
+		var namaSesuaiIjazah = document.getElementById("namaSesuaiIjazah");
+		var tdNamaSesuaiIjazah = document.getElementById("tdNamaSesuaiIjazah");
+
+		var nomorIdentitas = document.getElementById("nomorIdentitas");
+		var tdNomorIdentitas = document.getElementById("tdNomorIdentitas");
+		
+		var jenisIdentitas = document.getElementById("jenisIdentitas");
+		var tdJenisIdentitas = document.getElementById("tdJenisIdentitas");
+		
+		var alamatTetap = document.getElementById("alamatTetap");
+		var tdAlamatTetap = document.getElementById("tdAlamatTetap");
+		
+		var alamat = document.getElementById("alamat");
+		var tdAlamat = document.getElementById("tdAlamat");
+		
+		var noTelepon = document.getElementById("noTelepon");
+		var tdNoTelepon = document.getElementById("tdNoTelepon");
+		
+		var noHp = document.getElementById("noHp");
+		var tdNoHp = document.getElementById("tdNoHp");
+		
+		var negara = document.getElementById("negara");
+		var tdNegara = document.getElementById("tdNegara");
+		
+		var kewarganegaraan = document.getElementById("kewarganegaraan");
+		var tdKewarganegaraan = document.getElementById("tdKewarganegaraan");
+		
+		var provinsi = document.getElementById("provinsi");
+		var tdProvinsi = document.getElementById("tdProvinsi");
+		
+		var kota = document.getElementById("kota");
+		var tdKota = document.getElementById("tdKota");
+		 
+		var ulangiEmail = document.getElementById("ulangiEmail");
+		var tdUlangiEmail = document.getElementById("tdUlangiEmail");
+		
+		var email = document.getElementById("email");
+		var tdEmail = document.getElementById("tdEmail");
+		
+			
+		if (username.value == "") {
+			tdUsername.style.display = "block";
+		} else {
+			tdUsername.style.display = "none";
+		}
+		
+		if (password.value == "") {
+			tdPassword.style.display = "block";	
+		} else {
+			tdPassword.style.display = "none";
+		}
+		
+		if (ulangiPassword.value == "" ) {
+			tdUlangiPassword.style.display = "block";
+		} else {
+			tdUlangiPassword.style.display = "none";
+		}
+		
+		if (namaSesuaiIdentitas.value == "") {
+			tdNamaSesuaiIdentitas.style.display = "block";
+		} else {
+			tdNamasesuaiIdentitas.style.display = "none";
+		}
+		
+		if (namaSesuaiIjazah.value == "") {
+			tdNamaSesuaiIjazah.style.display = "block";
+		} else {
+			tdNamasesuaiIjazah.style.display = "none";
+		}
+		
+		if (jenisIdentitas.value == "-") {
+			tdJenisIdentitas.style.display = "block";
+		} else {
+			tdJenisIdentitas.style.display = "none";
+		}
+		
+		if (nomorIdentitas.value == "") {
+			tdNomorIdentitas.style.display = "block";
+		} else {
+			tdNomorIdentitas.style.display = "none";
+		}
+		
+		if (alamatTetap.value == "") {
+			tdAlamatTetap.style.display = "block";
+		} else {
+			tdAlamatTetap.style.display = "none";
+		}
+		
+		if (alamat.value == "") {
+			tdAlamat.style.display = "block";
+		} else {
+			tdAlamat.style.display = "none";
+		}
+		
+		if (noTelepon.value == "") {
+			tdNoTelepon.style.display = "block";
+		} else {
+			tdNoTelepon.style.display = "none";
+		}
+		
+		if (noHp.value == "") {
+			tdNoHp.style.display = "block";
+		} else {
+			tdNoHp.style.display = "none";
+		}
+		
+		if (kewarganegaraan.value == "pilihKewarganegaraan") {
+			tdKewarganegaraan.style.display = "block";
+		} else {
+			tdKewarganegaraan.style.display = "none";
+		}
+		
+		if (negara.value == "pilihNegara") {
+			tdNegara.style.display = "block";
+		} else {
+			tdNegara.style.display = "none";
+		}
+		
+		if (kota.value == "pilihKabupaten") {
+			tdKota.style.display = "block";
+		} else {
+			tdKota.style.display = "none";
+		}
+		
+		if (provinsi.value == "pilihProvinsi") {
+			tdProvinsi.style.display = "block";
+		} else {
+			tdProvinsi.style.display = "none";
+		}
+		
+		if (ulangiEmail.value == "") {
+			tdUlangiEmail.style.display = "block";
+		}else {
+			tdUlangiEmail.style.display = "none";
+		}
+		
+		if (email.value == "") {
+			tdEmail.style.display = "block";
+		}else {
+			tdEmail.style.display = "none";
+		}
+		
+	}
+</script>
+</html>

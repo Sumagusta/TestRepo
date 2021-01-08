@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>List Laptop</title>
+</head>
+<body>
+
+	<h1>Tabel Pasien</h1>
+	
+	<a></a>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Nama</th>
+				<th>Biaya</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a th:text="${pasienModel.noPasien}"></a></td>
+				<td><a th:text="${pasienModel.namaPasien}"></a></td>
+				<td><a th:text="${pasienModel.biayaPasien}"></a></td>
+			</tr>
+		</tbody>
+	</table>
+	<td>
+	<a th:href="@{/pasienAdd}">Back to Add</a>
+	</td>
+
+</body>
+</html>
